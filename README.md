@@ -1,4 +1,4 @@
-# FEND Feed Reader Testing Project
+# Feed Reader Testing Project
 
 This is a testing project at Udacity FEND Program, where I use [Jasmine](http://jasmine.github.io/), which is a behavior-driven development framework for testing JavaScript code.
 
