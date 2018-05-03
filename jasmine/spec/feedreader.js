@@ -10,9 +10,9 @@
  */
 $(function() {
     /* This is our first test suite - a test suite just contains
-    * a related set of tests. This suite is all about the RSS
-    * feeds definitions, the allFeeds variable in our application.
-    */
+     * a related set of tests. This suite is all about the RSS
+     * feeds definitions, the allFeeds variable in our application.
+     */
     describe('RSS Feeds', function() {
         /* This is our first test - it tests to make sure that the
          * allFeeds variable has been defined and that it is not
@@ -60,15 +60,15 @@ $(function() {
          * the CSS to determine how we're performing the
          * hiding/showing of the menu element.
          */
-         it('menu is hidden by default', function() {
+        it('menu is hidden by default', function() {
             expect($('body').hasClass('menu-hidden')).toBe(true);
         });
-         /* TODO: Write a test that ensures the menu changes
-          * visibility when the menu icon is clicked. This test
-          * should have two expectations: does the menu display when
-          * clicked and does it hide when clicked again.
-          */
-          it('menu icon is visibile on click', function() {
+        /* TODO: Write a test that ensures the menu changes
+         * visibility when the menu icon is clicked. This test
+         * should have two expectations: does the menu display when
+         * clicked and does it hide when clicked again.
+         */
+        it('menu icon is visibile on click', function() {
             //toggles menu icon to show/hide when is clicked
             $('.menu-icon-link').click();
             expect($('body').hasClass('menu-hidden')).toBe(false);
@@ -86,7 +86,7 @@ $(function() {
          * Remember, loadFeed() is asynchronous so this test will require
          * the use of Jasmine's beforeEach and asynchronous done() function.
          */
-         beforeEach(function(done) {
+        beforeEach(function(done) {
             loadFeed(0, done);
         });
 
@@ -101,5 +101,17 @@ $(function() {
          * by the loadFeed function that the content actually changes.
          * Remember, loadFeed() is asynchronous.
          */
-        
+        beforeEach(function(done) {
+            loadFeed(0, done);
+        });
+
+        it('new feed is loaded', function(done) {
+            var newFeed = $('.feed').html();
+            // load next feed
+            loadFeed(1, function() {
+                expect($('.feed').html()).not.toEqual(newFeed);
+                done();
+            });
+        });
+    });
 }());
