@@ -5,7 +5,10 @@ This is a testing project at Udacity FEND Program, where I use [Jasmine](http://
 
 ## Instructions to Run:
 
-You can run this project by downloading this repository to your computer or just write on the command line git clone https://github.com/cristalnaya/frontend-nanodegree-feedreader.git. Then just run index.html file in your browser.
+You can run this project by:
+* downloading this repository to your computer
+* or just write on the command line git clone https://github.com/cristalnaya/frontend-nanodegree-feedreader.git.
+* then just run index.html file in your browser.
 
 
 ## Tests Results:
